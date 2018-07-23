@@ -1,4 +1,4 @@
-package com.db.dbfrontrunner.controllers;
+package com.db.dbfrontrunner.Test;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestController {
-
 
     @RequestMapping("/hello")
     public String getHello(){
