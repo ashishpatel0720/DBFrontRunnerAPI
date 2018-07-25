@@ -1,4 +1,4 @@
-package com.db.dbfrontrunner.Test;
+package com.db.dbfrontrunner.test;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
