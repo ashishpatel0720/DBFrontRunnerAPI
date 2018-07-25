@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.22)
 # Database: dbdata
-# Generation Time: 2018-07-25 12:13:19 +0000
+# Generation Time: 2018-07-25 19:16:19 +0000
 # ************************************************************
 
 
@@ -325,21 +325,6 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table client_master
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `client_master`;
-
-CREATE TABLE `client_master` (
-  `CLIENT_NAME` text,
-  `CLIENT_CODE` text,
-  `COUNTRY` text,
-  `TRADING_LIMIT_USD` int(11) DEFAULT NULL,
-  `TRADING_LIMIT_Rs` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
 # Dump of table eichermot_stock
 # ------------------------------------------------------------
 
@@ -591,35 +576,6 @@ VALUES
 	(3,30,'HDFCBANK','INE040A01026',2209.55);
 
 /*!40000 ALTER TABLE `hdfc_stock` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table login_brokers
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `login_brokers`;
-
-CREATE TABLE `login_brokers` (
-  `BROKER_ID` text,
-  `NAME OF EMPLOYEE` text,
-  `PASSWORD` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `login_brokers` WRITE;
-/*!40000 ALTER TABLE `login_brokers` DISABLE KEYS */;
-
-INSERT INTO `login_brokers` (`BROKER_ID`, `NAME OF EMPLOYEE`, `PASSWORD`)
-VALUES
-	('DBBRO1','Saina N','ABCD1234'),
-	('DBBRO2','Hima D','EFGH5678'),
-	('DBBRO3','Sandeep K','IJKL9012'),
-	('DBBRO4','Sindhu P V','MNOP3456'),
-	('DBBRO5','Virat K','QRST7890'),
-	('DBBRO6','Mahendra','UVWX1234'),
-	('DBBRO7','Sakshi Malik','YZAB5678'),
-	('DBBRO8','Deepa KARMAKAR','CDEF9012');
-
-/*!40000 ALTER TABLE `login_brokers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -1259,6 +1215,36 @@ VALUES
 	(3,30,'EICHERMOT','INE066A01013',26920.5);
 
 /*!40000 ALTER TABLE `titan_stock` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table user
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `id` text,
+  `name` text,
+  `password` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+
+INSERT INTO `user` (`id`, `name`, `password`)
+VALUES
+	('DBBRO1','Saina N','ABCD1234'),
+	('DBBRO2','Hima D','EFGH5678'),
+	('DBBRO3','Sandeep K','IJKL9012'),
+	('DBBRO4','Sindhu P V','MNOP3456'),
+	('DBBRO5','Virat K','QRST7890'),
+	('DBBRO6','Mahendra','UVWX1234'),
+	('DBBRO7','Sakshi Malik','YZAB5678'),
+	('DBBRO8','Deepa KARMAKAR','CDEF9012'),
+	('ap','Ashish Patel','123');
+
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
