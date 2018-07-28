@@ -10,61 +10,60 @@ import javax.persistence.ManyToOne;
 @Entity
 public class orders {
 
-           String client_name;
-           String security;
-           String trade_date;
-           String trade_time;
-           int quantity;
-           String trade_type;
-           Double limit_price;
-           String direction;
-           Double value_rs;
-           String Broker_id;
-           @Id
-           String isin_no;
+    String clientname;
+    String security;
+    String tradedate;
+    String tradetime;
+    String quantity;
+    String tradetype;
+    String limitprice;
+    String direction;
+    String value;
+    String  broker;
+    @Id
+    String isinno;
 
-//        String CLIENT_NAME;
-//        String SECURITY;
-//        String TRADE_DATE;
-//        String TRADE_TIME;
-//        int QUANTITY;
-//        String TRADE_TYPE;
-//        Double LIMIT_PRICE;
-//        String DIRECTION;
-//        Double VALUE_RS;
-//        @Column(name = "BROKER_ID")
-//        String BROKER_ID;
-//        @Id
-//        String ISIN_NO;
-        @ManyToOne
-        User user;
+    public orders(){
 
+    }
 
-        public orders(){
-
-        }
-
-    public orders(String client_name, String security, String trade_date, String trade_time, int quantity, String trade_type, Double limit_price, String direction, Double value_rs, String broker, String isin_no, User user) {
-        this.client_name = client_name;
+    public orders(String clientname, String security, String tradedate, String tradetime, String quantity, String tradetype, String limitprice, String direction, String value, String broker, String isinno) {
+        this.clientname = clientname;
         this.security = security;
-        this.trade_date = trade_date;
-        this.trade_time = trade_time;
+        this.tradedate = tradedate;
+        this.tradetime = tradetime;
         this.quantity = quantity;
-        this.trade_type = trade_type;
-        this.limit_price = limit_price;
+        this.tradetype = tradetype;
+        this.limitprice = limitprice;
         this.direction = direction;
-        this.value_rs = value_rs;
-        Broker_id = broker;
-        this.isin_no = isin_no;
-        this.user = user;
+        this.value = value;
+        this.broker = broker;
+        this.isinno = isinno;
     }
 
-    public String getClient_name() {
-        return client_name;
+    @Override
+    public String toString() {
+        return "orders{" +
+                "clientname='" + clientname + '\'' +
+                ", security='" + security + '\'' +
+                ", tradedate='" + tradedate + '\'' +
+                ", tradetime='" + tradetime + '\'' +
+                ", quantity='" + quantity + '\'' +
+                ", tradetype='" + tradetype + '\'' +
+                ", limitprice='" + limitprice + '\'' +
+                ", direction='" + direction + '\'' +
+                ", value='" + value + '\'' +
+                ", broker='" + broker + '\'' +
+                ", isinno='" + isinno + '\'' +
+                '}';
     }
 
-    public void setClient_name(String client_name) {
-        this.client_name = client_name;
+    public String getClientname() {
+        return clientname;
+    }
+
+    public void setClientname(String clientname) {
+        this.clientname = clientname;
     }
 
     public String getSecurity() {
@@ -75,44 +74,44 @@ public class orders {
         this.security = security;
     }
 
-    public String getTrade_date() {
-        return trade_date;
+    public String getTradedate() {
+        return tradedate;
     }
 
-    public void setTrade_date(String trade_date) {
-        this.trade_date = trade_date;
+    public void setTradedate(String tradedate) {
+        this.tradedate = tradedate;
     }
 
-    public String getTrade_time() {
-        return trade_time;
+    public String getTradetime() {
+        return tradetime;
     }
 
-    public void setTrade_time(String trade_time) {
-        this.trade_time = trade_time;
+    public void setTradetime(String tradetime) {
+        this.tradetime = tradetime;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
-    public String getTrade_type() {
-        return trade_type;
+    public String getTradetype() {
+        return tradetype;
     }
 
-    public void setTrade_type(String trade_type) {
-        this.trade_type = trade_type;
+    public void setTradetype(String tradetype) {
+        this.tradetype = tradetype;
     }
 
-    public Double getLimit_price() {
-        return limit_price;
+    public String getLimitprice() {
+        return limitprice;
     }
 
-    public void setLimit_price(Double limit_price) {
-        this.limit_price = limit_price;
+    public void setLimitprice(String limitprice) {
+        this.limitprice = limitprice;
     }
 
     public String getDirection() {
@@ -123,37 +122,27 @@ public class orders {
         this.direction = direction;
     }
 
-    public Double getValue_rs() {
-        return value_rs;
+    public String getValue() {
+        return value;
     }
 
-    public void setValue_rs(Double value_rs) {
-        this.value_rs = value_rs;
+    public void setValue(String value) {
+        this.value = value;
     }
 
-    public String getBroker_id() {
-        return Broker_id;
+    public String getBroker() {
+        return broker;
     }
 
-    public void setBroker_id(String broker_id) {
-        Broker_id = broker_id;
+    public void setBroker(String broker) {
+        this.broker = broker;
     }
 
-    public String getIsin_no() {
-        return isin_no;
+    public String getIsinno() {
+        return isinno;
     }
 
-    public void setIsin_no(String isin_no) {
-        this.isin_no = isin_no;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setIsinno(String isinno) {
+        this.isinno = isinno;
     }
 }
-
-
