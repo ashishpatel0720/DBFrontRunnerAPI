@@ -193,7 +193,7 @@ CREATE TABLE `orders` (
   `direction` text,
   `value` double DEFAULT NULL,
   `broker` text,
-  `ISIN_NO` text
+  `isinno` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -319,4 +319,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-28 12:00:15
+-- Dump completed on 2018-07-28 12:07:55
