@@ -6,141 +6,139 @@ import javax.persistence.Id;
 @Entity
 public class orders {
 
-    String CLIENT_NAME;
-    String SECURITY;
-    String TRADE_DATE;
-    String TRADE_TIME;
-    int QUANTITY;
-    String TRADE_TYPE;
-    Double LIMIT_PRICE;
-    String DIRECTION;
-    Double VALUE_RS;
-    String BROKER_ID;
+    String clientname;
+    String security;
+    String tradedate;
+    String tradetime;
+    String quantity;
+    String tradetype;
+    String limitprice;
+    String direction;
+    String value;
+    String  broker;
     @Id
-    String ISIN_NO;
+    String isinno;
 
     public orders(){
 
     }
 
-    public orders(String CLIENT_NAME, String SECURITY, String TRADE_DATE, String TRADE_TIME, int QUANTITY, String TRADE_TYPE, Double LIMIT_PRICE, String DIRECTION, Double VALUE_RS, String BROKER_ID, String ISIN_NO) {
-        this.CLIENT_NAME = CLIENT_NAME;
-        this.SECURITY = SECURITY;
-        this.TRADE_DATE = TRADE_DATE;
-        this.TRADE_TIME = TRADE_TIME;
-        this.QUANTITY = QUANTITY;
-        this.TRADE_TYPE = TRADE_TYPE;
-        this.LIMIT_PRICE = LIMIT_PRICE;
-        this.DIRECTION = DIRECTION;
-        this.VALUE_RS = VALUE_RS;
-        this.BROKER_ID = BROKER_ID;
-        this.ISIN_NO = ISIN_NO;
+    public orders(String clientname, String security, String tradedate, String tradetime, String quantity, String tradetype, String limitprice, String direction, String value, String broker, String isinno) {
+        this.clientname = clientname;
+        this.security = security;
+        this.tradedate = tradedate;
+        this.tradetime = tradetime;
+        this.quantity = quantity;
+        this.tradetype = tradetype;
+        this.limitprice = limitprice;
+        this.direction = direction;
+        this.value = value;
+        this.broker = broker;
+        this.isinno = isinno;
     }
 
     @Override
     public String toString() {
-        return "oders{" +
-                "CLIENT_NAME='" + CLIENT_NAME + '\'' +
-                ", SECURITY='" + SECURITY + '\'' +
-                ", TRADE_DATE='" + TRADE_DATE + '\'' +
-                ", TRADE_TIME='" + TRADE_TIME + '\'' +
-                ", QUANTITY=" + QUANTITY +
-                ", TRADE_TYPE='" + TRADE_TYPE + '\'' +
-                ", LIMIT_PRICE=" + LIMIT_PRICE +
-                ", DIRECTION='" + DIRECTION + '\'' +
-                ", VALUE_RS=" + VALUE_RS +
-                ", BROKER_ID='" + BROKER_ID + '\'' +
-                ", ISIN_NO='" + ISIN_NO + '\'' +
+        return "orders{" +
+                "clientname='" + clientname + '\'' +
+                ", security='" + security + '\'' +
+                ", tradedate='" + tradedate + '\'' +
+                ", tradetime='" + tradetime + '\'' +
+                ", quantity='" + quantity + '\'' +
+                ", tradetype='" + tradetype + '\'' +
+                ", limitprice='" + limitprice + '\'' +
+                ", direction='" + direction + '\'' +
+                ", value='" + value + '\'' +
+                ", broker='" + broker + '\'' +
+                ", isinno='" + isinno + '\'' +
                 '}';
     }
 
-    public String getCLIENT_NAME() {
-        return CLIENT_NAME;
+    public String getClientname() {
+        return clientname;
     }
 
-    public void setCLIENT_NAME(String CLIENT_NAME) {
-        this.CLIENT_NAME = CLIENT_NAME;
+    public void setClientname(String clientname) {
+        this.clientname = clientname;
     }
 
-    public String getSECURITY() {
-        return SECURITY;
+    public String getSecurity() {
+        return security;
     }
 
-    public void setSECURITY(String SECURITY) {
-        this.SECURITY = SECURITY;
+    public void setSecurity(String security) {
+        this.security = security;
     }
 
-    public String getTRADE_DATE() {
-        return TRADE_DATE;
+    public String getTradedate() {
+        return tradedate;
     }
 
-    public void setTRADE_DATE(String TRADE_DATE) {
-        this.TRADE_DATE = TRADE_DATE;
+    public void setTradedate(String tradedate) {
+        this.tradedate = tradedate;
     }
 
-    public String getTRADE_TIME() {
-        return TRADE_TIME;
+    public String getTradetime() {
+        return tradetime;
     }
 
-    public void setTRADE_TIME(String TRADE_TIME) {
-        this.TRADE_TIME = TRADE_TIME;
+    public void setTradetime(String tradetime) {
+        this.tradetime = tradetime;
     }
 
-    public int getQUANTITY() {
-        return QUANTITY;
+    public String getQuantity() {
+        return quantity;
     }
 
-    public void setQUANTITY(int QUANTITY) {
-        this.QUANTITY = QUANTITY;
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
-    public String getTRADE_TYPE() {
-        return TRADE_TYPE;
+    public String getTradetype() {
+        return tradetype;
     }
 
-    public void setTRADE_TYPE(String TRADE_TYPE) {
-        this.TRADE_TYPE = TRADE_TYPE;
+    public void setTradetype(String tradetype) {
+        this.tradetype = tradetype;
     }
 
-    public Double getLIMIT_PRICE() {
-        return LIMIT_PRICE;
+    public String getLimitprice() {
+        return limitprice;
     }
 
-    public void setLIMIT_PRICE(Double LIMIT_PRICE) {
-        this.LIMIT_PRICE = LIMIT_PRICE;
+    public void setLimitprice(String limitprice) {
+        this.limitprice = limitprice;
     }
 
-    public String getDIRECTION() {
-        return DIRECTION;
+    public String getDirection() {
+        return direction;
     }
 
-    public void setDIRECTION(String DIRECTION) {
-        this.DIRECTION = DIRECTION;
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 
-    public Double getVALUE_RS() {
-        return VALUE_RS;
+    public String getValue() {
+        return value;
     }
 
-    public void setVALUE_RS(Double VALUE_RS) {
-        this.VALUE_RS = VALUE_RS;
+    public void setValue(String value) {
+        this.value = value;
     }
 
-    public String getBROKER_ID() {
-        return BROKER_ID;
+    public String getBroker() {
+        return broker;
     }
 
-    public void setBROKER_ID(String BROKER_ID) {
-        this.BROKER_ID = BROKER_ID;
+    public void setBroker(String broker) {
+        this.broker = broker;
     }
 
-    public String getISIN_NO() {
-        return ISIN_NO;
+    public String getIsinno() {
+        return isinno;
     }
 
-    public void setISIN_NO(String ISIN_NO) {
-        this.ISIN_NO = ISIN_NO;
+    public void setIsinno(String isinno) {
+        this.isinno = isinno;
     }
-
-
 }
