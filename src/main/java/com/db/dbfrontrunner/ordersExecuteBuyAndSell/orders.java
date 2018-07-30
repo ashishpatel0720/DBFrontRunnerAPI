@@ -1,4 +1,5 @@
-package com.db.dbfrontrunner.orders;
+package com.db.dbfrontrunner.ordersExecuteBuyAndSell;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -22,11 +23,10 @@ public class orders {
 
     }
 
-    public orders(String clientname, String security, String tradedate, String tradetime, int quantity, String tradetype, Double limitprice, String direction, Double value, String broker, String isinno) {
+    public orders(String clientname, String security, String tradedate,  int quantity, String tradetype, Double limitprice, String direction, Double value, String broker, String isinno) {
         this.clientname = clientname;
         this.security = security;
         this.tradedate = tradedate;
-        this.tradetime = tradetime;
         this.quantity = quantity;
         this.tradetype = tradetype;
         this.limitprice = limitprice;
