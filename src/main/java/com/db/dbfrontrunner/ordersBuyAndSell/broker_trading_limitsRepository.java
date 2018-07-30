@@ -1,9 +1,7 @@
-package com.db.dbfrontrunner.ordersBuy;
+package com.db.dbfrontrunner.ordersBuyAndSell;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
 
 public interface broker_trading_limitsRepository extends CrudRepository<broker_trading_limits , String> {
 

@@ -1,4 +1,4 @@
-package com.db.dbfrontrunner.ordersBuy;
+package com.db.dbfrontrunner.ordersBuyAndSell;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

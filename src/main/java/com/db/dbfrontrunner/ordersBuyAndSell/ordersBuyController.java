@@ -1,8 +1,7 @@
-package com.db.dbfrontrunner.ordersBuy;
+package com.db.dbfrontrunner.ordersBuyAndSell;
 
 
 import com.db.dbfrontrunner.response.Response;
-import com.db.dbfrontrunner.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,6 +40,8 @@ public class ordersBuyController {
         Double remaining_amount= result - amount;
         return new Response(1,"Logged In.","You have successfully Signed In",remaining_amount);
     }
+
+
 
 
 }

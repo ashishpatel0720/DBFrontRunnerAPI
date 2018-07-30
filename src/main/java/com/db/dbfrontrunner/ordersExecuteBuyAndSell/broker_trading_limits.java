@@ -1,4 +1,4 @@
-package com.db.dbfrontrunner.ordersBuy;
+package com.db.dbfrontrunner.ordersExecuteBuyAndSell;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
