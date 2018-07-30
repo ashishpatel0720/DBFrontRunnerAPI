@@ -25,7 +25,10 @@ import org.springframework.web.bind.annotation.RestController;
         Double remaining_amount= result - value;
 
         if(remaining_amount - userdata.amount >= 0){
-            //need to add database queries
+
+            orders new_order=new orders(userdata.clientname , userdata.security , "19-Jul",userdata.quantity,"LIMIT",userdata.amount/userdata.quantity , userdata.direction , userdata.amount,userdata.brokerid , userdata.isinno);
+
+            execute.save(new_order);
            return new Response(1,"executed","You have successfully Order execution",remaining_amount-userdata.amount);
         }
 
