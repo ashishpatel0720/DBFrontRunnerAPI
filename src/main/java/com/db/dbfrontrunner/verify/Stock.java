@@ -3,22 +3,20 @@ package com.db.dbfrontrunner.verify;
 import javax.persistence.*;
 
 @Entity
-//@Table(name="stock")
 public class Stock {
 
     int hours;
-
     int minutes;
     @Id
     String symbol;
     String isinno;
-    float stockcol;
+    double stockcol;
 
 
     public Stock()
     {}
 
-    public Stock(int hours, int minutes, String symbol, String isinno, float stockcol) {
+    public Stock(int hours, int minutes, String symbol, String isinno, double stockcol) {
         this.hours = hours;
         this.minutes = minutes;
         this.symbol = symbol;
@@ -59,11 +57,11 @@ public class Stock {
         this.isinno = isinno;
     }
 
-    public float getstockcol() {
+    public double getstockcol() {
         return stockcol;
     }
 
-    public void setstockcol(float stockcol) {
+    public void setstockcol(double stockcol) {
         this.stockcol = stockcol;
     }
 

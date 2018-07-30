@@ -1,39 +1,67 @@
 package com.db.dbfrontrunner.verify;
 
-import antlr.collections.List;
+
 import com.db.dbfrontrunner.response.Response;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+
 
 @RestController    // This means that this class is a Controller
 @RequestMapping(path="/verify") // This means URL's start wit
 public class VerifyMarketController {
     @Autowired
-    VerifyMarketRepository verifyMarketRepository;
+    VerifyMarketImpl verifyMarketImpl;
 
     @PostMapping("/variance")
-    public List<Stock> verify_price(@RequestBody VerifyMarket market)
+    public Response verify_price(@RequestBody VerifyMarket market)
     {
 
 
         String symbol = market.getName_of_stock();
-        double broker_price = market.getBroker_price();
-        List<Stock> stockList = verifyMarketRepository.findBySymbol(symbol);
-//        List<Stock> stockList = verifyMarketRepository.findBySymbolandHoursandMinutes(symbol,9,15);
-        float current_price = findcurrentprice(stockList,9,15);
+        float broker_price = market.getBroker_price();
+        float current_price;
 
-        return stockList;
+        try {
+
+           current_price  = verifyMarketImpl.findBySymbolandHoursandMinutes(symbol, 9, 15);
+
+        }
+
+        catch (Exception e)
+        {
+            Response response=new Response(3,"Compliance Verification","Query Error",null);
+            return response;
+        }
+
+        if (verifyvariance(broker_price,current_price))
+        {
+            Response response=new Response(1,"Compliance Verification","Compliance Verified Set Price is within limits",null);
+//            response.setCode(1);
+//            response.setDescription("Compliance Verified");
+            return response;
+
+        }
+        String poss_range = new String(0.98*current_price+":"+1.02*current_price);
+        Response response=new Response(2,"Compliance Verification","Price is non-compliance it should be within 2% limit of market price",poss_range);
+
+
+
+        return response;
 
 
     }
 
-    public float findcurrentprice(List<Stock> stockList,int hours,int minutes)
+    boolean verifyvariance(float broker_price,float current_price)
     {
-            return 0;
+        if (broker_price < 1.02*current_price && broker_price > 0.98*current_price)
+        {
+            return true;
+
+        }
+
+        return false;
     }
-
-
 
 
 }
