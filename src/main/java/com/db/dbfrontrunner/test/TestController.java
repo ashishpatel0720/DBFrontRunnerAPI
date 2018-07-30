@@ -9,7 +9,6 @@ public class TestController {
 
     @RequestMapping("/hello")
     public String getHello(){
-
         return "hello api";
     }
 
