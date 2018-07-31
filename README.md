@@ -22,3 +22,7 @@ this is an application for Developing API endpoints for FrontRunner Detection Ap
 
   // To verify whether the variance price is liable
 /verify/variance/               { empid:" ", name_of_stock:" ", broker_price: }
+
+
+//To get sectors from brokerid
+/users/sectors/              { brokerid : " "}
