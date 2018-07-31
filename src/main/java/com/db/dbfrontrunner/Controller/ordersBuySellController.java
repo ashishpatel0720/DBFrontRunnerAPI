@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path="/users")
-public class ordersBuyController {
+public class ordersBuySellController {
 
     @Autowired
     ordersBuyRepository ordersBuy;
