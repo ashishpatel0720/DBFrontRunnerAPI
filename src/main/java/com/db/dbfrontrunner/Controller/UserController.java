@@ -1,7 +1,9 @@
-package com.db.dbfrontrunner.user;
+package com.db.dbfrontrunner.Controller;
 
 
 import com.db.dbfrontrunner.response.Response;
+import com.db.dbfrontrunner.Tables.User;
+import com.db.dbfrontrunner.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

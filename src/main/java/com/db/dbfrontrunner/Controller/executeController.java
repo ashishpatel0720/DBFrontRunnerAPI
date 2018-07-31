@@ -1,7 +1,10 @@
-package com.db.dbfrontrunner.ordersExecuteBuyAndSell;
+package com.db.dbfrontrunner.Controller;
 
 
-import com.db.dbfrontrunner.ordersBuyAndSell.broker_trading_limitsRepository;
+import com.db.dbfrontrunner.Repository.broker_trading_limitsRepository;
+import com.db.dbfrontrunner.Repository.executeRepository;
+import com.db.dbfrontrunner.Tables.Orders;
+import com.db.dbfrontrunner.Tables.userdata;
 import com.db.dbfrontrunner.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
     executeRepository execute;
     @Autowired
     broker_trading_limitsRepository broker_trading_limit;
+
+
     @PostMapping("/orders/execute")
     public Response executeOrders(@RequestBody userdata userdata){
         String seclimit = broker_trading_limit.findByEmpid(userdata.brokerid);
@@ -26,10 +31,11 @@ import org.springframework.web.bind.annotation.RestController;
 
         if(remaining_amount - userdata.amount >= 0){
 
-            orders new_order=new orders(userdata.clientname , userdata.security , "19-Jul",userdata.quantity,"LIMIT",userdata.amount/userdata.quantity , userdata.direction , userdata.amount,userdata.brokerid , userdata.isinno);
+            Orders new_order=new Orders(userdata.clientname , userdata.security , "19-Jul",null,userdata.quantity,"LIMIT",userdata.amount/userdata.quantity , userdata.direction , userdata.amount,userdata.brokerid , userdata.isinno);
 
             execute.save(new_order);
-           return new Response(1,"executed","You have successfully Order execution",remaining_amount-userdata.amount);
+
+            return new Response(1,"executed","You have successfully Order execution",remaining_amount-userdata.amount);
         }
 
         else{

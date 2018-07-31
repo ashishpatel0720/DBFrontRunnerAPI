@@ -1,8 +1,8 @@
-package com.db.dbfrontrunner.user_orders;
+package com.db.dbfrontrunner.Tables;
 
 public class userid {
 
-    String brokerid;
+    public String brokerid;
     public userid(){
         
     }

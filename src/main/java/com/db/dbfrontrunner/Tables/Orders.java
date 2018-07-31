@@ -1,33 +1,29 @@
-package com.db.dbfrontrunner.user_orders;
+package com.db.dbfrontrunner.Tables;
 
-import com.db.dbfrontrunner.user.User;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
-public class orders {
+public class Orders {
 
     String clientname;
     String security;
     String tradedate;
     String tradetime;
-    String quantity;
+    int quantity;
     String tradetype;
-    String limitprice;
+    Double limitprice;
     String direction;
-    String value;
+    Double value;
     String  broker;
     @Id
     String isinno;
 
-    public orders(){
+    public Orders(){
 
     }
 
-    public orders(String clientname, String security, String tradedate, String tradetime, String quantity, String tradetype, String limitprice, String direction, String value, String broker, String isinno) {
+    public Orders(String clientname, String security, String tradedate, String tradetime, int quantity, String tradetype, Double limitprice, String direction, Double value, String broker, String isinno) {
         this.clientname = clientname;
         this.security = security;
         this.tradedate = tradedate;
@@ -48,11 +44,11 @@ public class orders {
                 ", security='" + security + '\'' +
                 ", tradedate='" + tradedate + '\'' +
                 ", tradetime='" + tradetime + '\'' +
-                ", quantity='" + quantity + '\'' +
+                ", quantity=" + quantity +
                 ", tradetype='" + tradetype + '\'' +
-                ", limitprice='" + limitprice + '\'' +
+                ", limitprice=" + limitprice +
                 ", direction='" + direction + '\'' +
-                ", value='" + value + '\'' +
+                ", value=" + value +
                 ", broker='" + broker + '\'' +
                 ", isinno='" + isinno + '\'' +
                 '}';
@@ -90,11 +86,11 @@ public class orders {
         this.tradetime = tradetime;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
@@ -106,11 +102,11 @@ public class orders {
         this.tradetype = tradetype;
     }
 
-    public String getLimitprice() {
+    public Double getLimitprice() {
         return limitprice;
     }
 
-    public void setLimitprice(String limitprice) {
+    public void setLimitprice(Double limitprice) {
         this.limitprice = limitprice;
     }
 
@@ -122,11 +118,11 @@ public class orders {
         this.direction = direction;
     }
 
-    public String getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 
@@ -146,3 +142,4 @@ public class orders {
         this.isinno = isinno;
     }
 }
+

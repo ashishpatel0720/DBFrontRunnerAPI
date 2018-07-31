@@ -1,9 +1,7 @@
-package com.db.dbfrontrunner.user;
+package com.db.dbfrontrunner.Tables;
 
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 

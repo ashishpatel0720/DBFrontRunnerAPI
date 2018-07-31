@@ -1,10 +1,10 @@
-package com.db.dbfrontrunner.ordersExecuteBuyAndSell;
+package com.db.dbfrontrunner.Tables;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class broker_trading_limits {
+public class Broker_trading_limits {
 
     @Id
     String empid;
@@ -17,11 +17,11 @@ public class broker_trading_limits {
     String sector2;
     String password;
 
-    public broker_trading_limits(){
+    public Broker_trading_limits(){
 
     }
 
-    public broker_trading_limits(String empid, String nameofemployee, String desk, String designation, String sectorlimit, String overalllimit, String sector1, String sector2, String password) {
+    public Broker_trading_limits(String empid, String nameofemployee, String desk, String designation, String sectorlimit, String overalllimit, String sector1, String sector2, String password) {
         this.empid = empid;
         this.nameofemployee = nameofemployee;
         this.desk = desk;

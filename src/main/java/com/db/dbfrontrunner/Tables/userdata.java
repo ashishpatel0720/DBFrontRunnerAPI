@@ -1,13 +1,13 @@
-package com.db.dbfrontrunner.ordersExecuteBuyAndSell;
+package com.db.dbfrontrunner.Tables;
 
 public class userdata {
-    Double amount;
-    String direction;
-    String security;
-    String brokerid;
-    int quantity;
-    String clientname;
-    String isinno;
+   public  Double amount;
+   public  String direction;
+    public String security;
+    public String brokerid;
+    public int quantity;
+    public String clientname;
+    public String isinno;
 
 
     public userdata(){

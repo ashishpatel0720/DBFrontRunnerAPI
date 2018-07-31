@@ -1,6 +1,10 @@
-package com.db.dbfrontrunner.ordersBuyAndSell;
+package com.db.dbfrontrunner.Controller;
 
 
+import com.db.dbfrontrunner.Repository.broker_trading_limitsRepository;
+import com.db.dbfrontrunner.Repository.ordersBuyRepository;
+import com.db.dbfrontrunner.Tables.userSecurity;
+import com.db.dbfrontrunner.Tables.userid;
 import com.db.dbfrontrunner.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +23,7 @@ public class ordersBuyController {
 
 
     @PostMapping("/orders/buy")
-    public Response buy(@RequestBody userid user){
+    public Response buy(@RequestBody userSecurity user){
 
         String seclimit = broker_trading_limit.findByEmpid(user.brokerid);
         Double result = Double.parseDouble(seclimit);
@@ -31,7 +35,7 @@ public class ordersBuyController {
 
 
     @PostMapping("/orders/sell")
-    public Response sell(@RequestBody userid user){
+    public Response sell(@RequestBody userSecurity user){
 
         String seclimit = broker_trading_limit.findByEmpid(user.brokerid);
         Double result = Double.parseDouble(seclimit);
