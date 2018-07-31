@@ -1,10 +1,10 @@
 package com.db.dbfrontrunner.Controller;
 
 
-import com.db.dbfrontrunner.Repository.broker_trading_limitsRepository;
-import com.db.dbfrontrunner.Repository.executeRepository;
+import com.db.dbfrontrunner.Repository.BrokerTradingLimitsRepository;
+import com.db.dbfrontrunner.Repository.ExecuteRepository;
 import com.db.dbfrontrunner.Tables.Orders;
-import com.db.dbfrontrunner.Tables.userdata;
+import com.db.dbfrontrunner.Tables.UserData;
 import com.db.dbfrontrunner.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,29 +13,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path="/users")public class executeController {
+@RequestMapping(path="/users")public class ExecuteController {
 
     @Autowired
-    executeRepository execute;
+    ExecuteRepository execute;
     @Autowired
-    broker_trading_limitsRepository broker_trading_limit;
+    BrokerTradingLimitsRepository broker_trading_limit;
 
 
     @PostMapping("/orders/execute")
-    public Response executeOrders(@RequestBody userdata userdata){
-        String seclimit = broker_trading_limit.findByEmpid(userdata.brokerid);
+    public Response executeOrders(@RequestBody UserData UserData){
+        String seclimit = broker_trading_limit.findByEmpid(UserData.brokerid);
         Double result = Double.parseDouble(seclimit);
         System.out.println(seclimit);
-        double value = execute.getSum(userdata.brokerid , userdata.security);
+        double value = execute.getSum(UserData.brokerid , UserData.security);
         Double remaining_amount= result - value;
 
-        if(remaining_amount - userdata.amount >= 0){
+        if(remaining_amount - UserData.amount >= 0){
 
-            Orders new_order=new Orders(userdata.clientname , userdata.security , "19-Jul",null,userdata.quantity,"LIMIT",userdata.amount/userdata.quantity , userdata.direction , userdata.amount,userdata.brokerid , userdata.isinno);
+            Orders new_order=new Orders(UserData.clientname , UserData.security , "19-Jul",null, UserData.quantity,"LIMIT", UserData.amount/ UserData.quantity , UserData.direction , UserData.amount, UserData.brokerid , UserData.isinno);
 
             execute.save(new_order);
 
-            return new Response(1,"executed","You have successfully Order execution",remaining_amount-userdata.amount);
+            return new Response(1,"executed","You have successfully Order execution",remaining_amount- UserData.amount);
         }
 
         else{

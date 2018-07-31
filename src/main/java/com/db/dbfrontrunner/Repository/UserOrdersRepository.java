@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface user_ordersRepository extends CrudRepository<Orders , String> {
+public interface UserOrdersRepository extends CrudRepository<Orders , String> {
     List<Orders> findByBroker(String id);
 }

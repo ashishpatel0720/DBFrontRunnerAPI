@@ -2,9 +2,6 @@ package com.db.dbfrontrunner.Tables;
 
 public class VerifyMarket {
 
-
-
-
     String empid;
     String name_of_stock;
     int broker_price;

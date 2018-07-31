@@ -1,13 +1,13 @@
 package com.db.dbfrontrunner.Tables;
 
-public class userid {
+public class UserId {
 
     public String brokerid;
-    public userid(){
+    public UserId(){
         
     }
 
-    public userid(String brokerid) {
+    public UserId(String brokerid) {
         this.brokerid = brokerid;
     }
 

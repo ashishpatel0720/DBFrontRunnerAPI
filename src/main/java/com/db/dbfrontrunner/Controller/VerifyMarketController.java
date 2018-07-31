@@ -1,8 +1,8 @@
 package com.db.dbfrontrunner.Controller;
 
+import com.db.dbfrontrunner.Implementation.VerifyMarketImpl;
 import com.db.dbfrontrunner.response.Response;
 import com.db.dbfrontrunner.Tables.VerifyMarket;
-import com.db.dbfrontrunner.Repository.VerifyMarketImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

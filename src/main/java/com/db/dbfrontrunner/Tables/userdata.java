@@ -1,6 +1,6 @@
 package com.db.dbfrontrunner.Tables;
 
-public class userdata {
+public class UserData {
    public  Double amount;
    public  String direction;
     public String security;
@@ -10,11 +10,11 @@ public class userdata {
     public String isinno;
 
 
-    public userdata(){
+    public UserData(){
 
     }
 
-    public userdata(Double amount, String direction, String security, String brokerid, int quantity, String clientname, String isinno) {
+    public UserData(Double amount, String direction, String security, String brokerid, int quantity, String clientname, String isinno) {
         this.amount = amount;
         this.direction = direction;
         this.security = security;

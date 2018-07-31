@@ -1,14 +1,14 @@
 package com.db.dbfrontrunner.Tables;
 
-public class userSecurity {
+public class UserSecurity {
     public String brokerid;
     public String security;
 
-    public userSecurity(){
+    public UserSecurity(){
 
     }
 
-    public userSecurity(String brokerid, String security) {
+    public UserSecurity(String brokerid, String security) {
         this.brokerid = brokerid;
         this.security = security;
     }
