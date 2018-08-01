@@ -4,6 +4,7 @@ package com.db.dbfrontrunner.Controller;
 import com.db.dbfrontrunner.Tables.Orders;
 import com.db.dbfrontrunner.Repository.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ public class OrdersController {
     OrdersRepository ordersrepository;
 
 
+    @CrossOrigin //Todo:
     @RequestMapping(value = "/orders" , method = RequestMethod.GET)
     public List<Orders> Order_List (){
 

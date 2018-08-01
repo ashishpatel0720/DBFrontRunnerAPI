@@ -4,10 +4,7 @@ import com.db.dbfrontrunner.Implementation.VerifyMarketImpl;
 import com.db.dbfrontrunner.response.Response;
 import com.db.dbfrontrunner.Tables.VerifyMarket;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController    // This means that this class is a Controller
@@ -16,6 +13,7 @@ public class VerifyMarketController {
     @Autowired
     VerifyMarketImpl verifyMarketImpl;
 
+    @CrossOrigin //Todo:
     @PostMapping("/variance")
     public Response verify_price(@RequestBody VerifyMarket market)
     {

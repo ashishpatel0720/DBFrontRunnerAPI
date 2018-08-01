@@ -6,10 +6,7 @@ import com.db.dbfrontrunner.Repository.OrdersBuyRepository;
 import com.db.dbfrontrunner.Tables.UserSecurity;
 import com.db.dbfrontrunner.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path="/users")
@@ -21,6 +18,7 @@ public class OrdersBuySellController {
     BrokerTradingLimitsRepository broker_trading_limit;
 
 
+    @CrossOrigin //Todo:
     @PostMapping("/orders/buy")
     public Response buy(@RequestBody UserSecurity user){
 
@@ -33,6 +31,7 @@ public class OrdersBuySellController {
     }
 
 
+    @CrossOrigin //Todo:
     @PostMapping("/orders/sell")
     public Response sell(@RequestBody UserSecurity user){
 
