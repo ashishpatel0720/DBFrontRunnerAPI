@@ -36,3 +36,6 @@ public class UserController {
 			return new Response(0,"User Not Found","Please enter again",null);
 	}
 }
+
+
+// This is a controller for all the users
