@@ -120,3 +120,6 @@ public class BrokertradingLimits {
         this.password = password;
     }
 }
+
+
+//This is admin table
