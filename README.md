@@ -24,5 +24,13 @@ this is an application for Developing API endpoints for FrontRunner Detection Ap
 /verify/variance/               { empid:" ", name_of_stock:" ", broker_price: }
 
 
-//To get sectors from brokerid
-/users/sectors/              { brokerid : " "}
+//To get security from brokerid
+/users/security/              { brokerid : " "}
+
+//To get ssecurity from sectors
+/users/sectors/securitiy
+
+
+
+
+
