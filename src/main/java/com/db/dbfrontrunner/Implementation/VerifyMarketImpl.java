@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class VerifyMarketImpl implements VerifyMarketRepository {
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    JdbcTemplate jdbcTemplate;    //This is a template
 
 
     @Override

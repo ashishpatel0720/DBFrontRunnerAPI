@@ -15,7 +15,7 @@ public class SectorsImpl implements SectorRepository {
 
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    JdbcTemplate jdbcTemplate;   //This is a sector
 
     @Override
     public List<Sectors> findByEmpid(String empid) {
