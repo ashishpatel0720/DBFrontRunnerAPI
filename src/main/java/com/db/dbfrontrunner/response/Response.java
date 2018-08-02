@@ -56,3 +56,6 @@ public class Response {
         this.description = description;
     }
 }
+
+
+//This is generic response
