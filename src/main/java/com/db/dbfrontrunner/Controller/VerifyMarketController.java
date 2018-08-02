@@ -19,13 +19,16 @@ public class VerifyMarketController {
     {
 
 
-        String symbol = market.getName_of_stock();
+        String symbol = market.getSecurityid();
         float broker_price = market.getBroker_price();
+        int hours = market.getHours();
+        int minutes = market.getMinutes();
+        String empid = market.getEmpid();
         float current_price;
 
         try {
 
-            current_price  = verifyMarketImpl.findBySymbolandHoursandMinutes(symbol, 9, 15);
+            current_price  = verifyMarketImpl.findBySymbolandHoursandMinutes(symbol, hours, minutes);
 
         }
 
