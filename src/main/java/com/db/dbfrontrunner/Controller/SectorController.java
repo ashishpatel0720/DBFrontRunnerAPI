@@ -24,7 +24,8 @@ public class SectorController {
     @Autowired
     SecurityRepository secrep;
 
-    @PostMapping("users/security")
+    @CrossOrigin //Todo:
+    @PostMapping("/users/securities")
     public List<Optional<SecurityMaster>> getSectors(@RequestBody UserId user){
 
         List<Optional<SecurityMaster>> data=new ArrayList<>();
