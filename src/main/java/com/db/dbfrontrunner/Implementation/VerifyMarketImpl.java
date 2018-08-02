@@ -16,8 +16,8 @@ public class VerifyMarketImpl implements VerifyMarketRepository {
     @Override
     public float findBySymbolandHoursandMinutes(String symbol, int hours, int minutes) {
 
-        String sql="select avg(stockcol) from stock where symbol=? and hours=? and minutes>? and minutes<?";
-        float current_price=jdbcTemplate.queryForObject(sql,new Object[]{symbol,hours,minutes-3,minutes+3},float.class);
+        String sql="select avg(stockcol) from stock where symbol=? and hours=? and minutes>? and minutes<=?";
+        float current_price=jdbcTemplate.queryForObject(sql,new Object[]{symbol,hours,minutes-3,minutes},float.class);
         return current_price;
     }
 
