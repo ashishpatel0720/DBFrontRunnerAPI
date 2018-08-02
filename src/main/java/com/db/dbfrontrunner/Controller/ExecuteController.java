@@ -3,6 +3,7 @@ package com.db.dbfrontrunner.Controller;
 
 import com.db.dbfrontrunner.Repository.BrokerTradingLimitsRepository;
 import com.db.dbfrontrunner.Repository.ExecuteRepository;
+import com.db.dbfrontrunner.Repository.SymbolRepository;
 import com.db.dbfrontrunner.Tables.Orders;
 import com.db.dbfrontrunner.Tables.UserData;
 import com.db.dbfrontrunner.response.Response;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
     ExecuteRepository execute;
     @Autowired
     BrokerTradingLimitsRepository broker_trading_limit;
+    @Autowired
+    SymbolRepository symbrep;
 
 	 @CrossOrigin //Todo:
     @PostMapping("/orders/execute")
@@ -23,12 +26,15 @@ import org.springframework.web.bind.annotation.*;
         String seclimit = broker_trading_limit.findByEmpid(UserData.brokerid);
         Double result = Double.parseDouble(seclimit);
         System.out.println(seclimit);
-        double value = execute.getSum(UserData.brokerid , UserData.security);
+        String security = symbrep.getSecurity(UserData.symbol);
+        double value = execute.getSum(UserData.brokerid , security);
         Double remaining_amount= result - value;
 
         if(remaining_amount - UserData.amount >= 0){
 
-            Orders new_order=new Orders(UserData.clientname , UserData.security , "19-Jul",null, UserData.quantity,"LIMIT", UserData.amount/ UserData.quantity , UserData.direction , UserData.amount, UserData.brokerid , UserData.isinno);
+
+
+            Orders new_order=new Orders(UserData.clientname , security , "19-Jul",null, UserData.quantity,"LIMIT", UserData.amount/ UserData.quantity , UserData.direction , UserData.amount, UserData.brokerid , UserData.isinno);
 
             execute.save(new_order);
 

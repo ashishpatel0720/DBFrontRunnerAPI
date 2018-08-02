@@ -3,7 +3,7 @@ package com.db.dbfrontrunner.Tables;
 public class UserData {
    public  Double amount;
    public  String direction;
-    public String security;
+    public String symbol;
     public String brokerid;
     public int quantity;
     public String clientname;
@@ -14,10 +14,10 @@ public class UserData {
 
     }
 
-    public UserData(Double amount, String direction, String security, String brokerid, int quantity, String clientname, String isinno) {
+    public UserData(Double amount, String direction, String symbol, String brokerid, int quantity, String clientname, String isinno) {
         this.amount = amount;
         this.direction = direction;
-        this.security = security;
+        this.symbol = symbol;
         this.brokerid = brokerid;
         this.quantity = quantity;
         this.clientname = clientname;
@@ -48,12 +48,12 @@ public class UserData {
         this.direction = direction;
     }
 
-    public String getSecurity() {
-        return security;
+    public String getSymbol() {
+        return symbol;
     }
 
-    public void setSecurity(String security) {
-        this.security = security;
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
     }
 
     public String getBrokerid() {
