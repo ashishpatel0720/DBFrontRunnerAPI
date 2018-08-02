@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.22)
 # Database: dbdata_ap
-# Generation Time: 2018-08-02 16:19:53 +0000
+# Generation Time: 2018-08-02 20:09:13 +0000
 # ************************************************************
 
 
@@ -18,6 +18,29 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table admin
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `admin`;
+
+CREATE TABLE `admin` (
+  `id` text,
+  `name` text,
+  `password` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+
+INSERT INTO `admin` (`id`, `name`, `password`)
+VALUES
+	('ap','Ashish','123'),
+	('pateash','Ashish Patel','password');
+
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table airtel_stock
@@ -936,7 +959,9 @@ VALUES
 	('ANDRES INIESTA','EICHER MOTORS LTD','19-Jul',NULL,50,'LIMIT',536.83,'B',26841.5,'DBBRO4','INE280A01089',NULL,NULL,NULL,NULL,NULL,NULL),
 	('ANDRES INIESTA','HDFC BANK LTD','19-Jul',NULL,50,'LIMIT',43.88,'B',2194,'DBBRO7','INE280A0109',NULL,NULL,NULL,NULL,NULL,NULL),
 	('ANDRES INIESTA','HDFC BANK LTD','19-Jul',NULL,50,'LIMIT',43.711000000000006,'B',2185.55,'DBBRO7','INE280A0110',NULL,NULL,NULL,NULL,NULL,NULL),
-	('Sakshi Malik','HDFC BANK LTD','19-Jul',NULL,51,'LIMIT',42.84313725490196,'B',2185,'DBBRO7','INEDB2808B323671',NULL,NULL,NULL,NULL,NULL,NULL);
+	('Sakshi Malik','HDFC BANK LTD','19-Jul',NULL,51,'LIMIT',42.84313725490196,'B',2185,'DBBRO7','INEDB2808B323671',NULL,NULL,NULL,NULL,NULL,NULL),
+	('Sakshi Malik','HDFC BANK LTD','19-Jul',NULL,7,'LIMIT',314.2857142857143,'B',2200,'DBBRO7','INEDB2808B60890',NULL,NULL,NULL,NULL,NULL,NULL),
+	('Sakshi Malik','HDFC BANK LTD','19-Jul',NULL,6,'LIMIT',364.8333333333333,'S',2189,'DBBRO7','INEDB2808B883704',NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1937,15 +1962,14 @@ LOCK TABLES `user` WRITE;
 
 INSERT INTO `user` (`id`, `name`, `password`)
 VALUES
-	('DBBRO1','Saina N','ABCD1234'),
-	('DBBRO2','Hima D','EFGH5678'),
-	('DBBRO3','Sandeep K','IJKL9012'),
-	('DBBRO4','Sindhu P V','MNOP3456'),
-	('DBBRO5','Virat K','QRST7890'),
-	('DBBRO6','Mahendra','UVWX1234'),
-	('DBBRO7','Sakshi Malik','YZAB5678'),
-	('DBBRO8','Deepa KARMAKAR','CDEF9012'),
-	('ap','Ashish Patel','123');
+	('DBBRO1','Saina N','123'),
+	('DBBRO2','Hima D','123'),
+	('DBBRO3','Sandeep K','123'),
+	('DBBRO4','Sindhu P V','123'),
+	('DBBRO5','Virat K','123'),
+	('DBBRO6','Mahendra','123'),
+	('DBBRO7','Sakshi Malik','123'),
+	('DBBRO8','Deepa KARMAKAR','123');
 
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
