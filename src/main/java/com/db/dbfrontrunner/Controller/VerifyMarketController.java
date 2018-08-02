@@ -1,6 +1,7 @@
 package com.db.dbfrontrunner.Controller;
 
 import com.db.dbfrontrunner.Implementation.VerifyMarketImpl;
+import com.db.dbfrontrunner.Tables.CurrentPrice;
 import com.db.dbfrontrunner.response.Response;
 import com.db.dbfrontrunner.Tables.VerifyMarket;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +42,6 @@ public class VerifyMarketController {
         if (verifyvariance(broker_price,current_price))
         {
             Response response=new Response(1,"Compliance Verification","Compliance Verified Set Price is within limits",null);
-//            response.setCode(1);
-//            response.setDescription("Compliance Verified");
             return response;
 
         }
@@ -52,6 +51,36 @@ public class VerifyMarketController {
 
 
         return response;
+
+
+    }
+
+
+    @CrossOrigin
+    @PostMapping("/currentprice")
+    public Response current_price(@RequestBody CurrentPrice price)
+    {
+        String symbol = price.getSecurityid();
+        int hours = price.getHours();
+        int minutes = price.getMinutes();
+        float current_price;
+        try {
+
+            current_price  = verifyMarketImpl.findBySymbolandHoursandMinutes(symbol, hours, minutes);
+
+        }
+
+        catch (Exception e)
+        {
+            Response response=new Response(2,"Current Price ","Query Error",null);
+            return response;
+        }
+
+
+        Response response = new Response(1,"Current Price",Float.toString(current_price),null);
+
+        return response;
+
 
 
     }
