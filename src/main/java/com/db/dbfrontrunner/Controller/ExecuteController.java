@@ -7,10 +7,7 @@ import com.db.dbfrontrunner.Tables.Orders;
 import com.db.dbfrontrunner.Tables.UserData;
 import com.db.dbfrontrunner.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path="/users")public class ExecuteController {
@@ -20,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
     @Autowired
     BrokerTradingLimitsRepository broker_trading_limit;
 
-
+	 @CrossOrigin //Todo:
     @PostMapping("/orders/execute")
     public Response executeOrders(@RequestBody UserData UserData){
         String seclimit = broker_trading_limit.findByEmpid(UserData.brokerid);

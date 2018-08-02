@@ -5,10 +5,7 @@ import com.db.dbfrontrunner.Tables.Orders;
 import com.db.dbfrontrunner.Repository.UserOrdersRepository;
 import com.db.dbfrontrunner.Tables.UserId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +16,7 @@ public class UserOrdersController {
     @Autowired
     UserOrdersRepository user_orders;
 
+    @CrossOrigin //Todo:
     @PostMapping("/orders")
     public List<Orders> user_orders(@RequestBody UserId data){
         System.out.println(data.brokerid);

@@ -6,6 +6,7 @@ import com.db.dbfrontrunner.Tables.Sectors;
 import com.db.dbfrontrunner.Tables.SecurityMaster;
 import com.db.dbfrontrunner.Tables.UserId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

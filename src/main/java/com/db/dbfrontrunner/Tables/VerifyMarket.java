@@ -2,19 +2,26 @@ package com.db.dbfrontrunner.Tables;
 
 public class VerifyMarket {
 
+
     String empid;
-    String name_of_stock;
+    String securityid;
     int broker_price;
+    int hours;
+    int minutes;
 
-    public VerifyMarket()
-    {
+    public  VerifyMarket()
+    {}
 
-    }
-    public VerifyMarket(String empid, String name_of_stock, int broker_price) {
+    public VerifyMarket(String empid, String securityid, int broker_price, int hours, int minutes) {
         this.empid = empid;
-        this.name_of_stock = name_of_stock;
+        this.securityid = securityid;
         this.broker_price = broker_price;
+        this.hours = hours;
+        this.minutes = minutes;
     }
+
+
+
     public String getEmpid() {
         return empid;
     }
@@ -23,12 +30,12 @@ public class VerifyMarket {
         this.empid = empid;
     }
 
-    public String getName_of_stock() {
-        return name_of_stock;
+    public String getSecurityid() {
+        return securityid;
     }
 
-    public void setName_of_stock(String name_of_stock) {
-        this.name_of_stock = name_of_stock;
+    public void setSecurityid(String securityid) {
+        this.securityid = securityid;
     }
 
     public int getBroker_price() {
@@ -37,6 +44,22 @@ public class VerifyMarket {
 
     public void setBroker_price(int broker_price) {
         this.broker_price = broker_price;
+    }
+
+    public int getHours() {
+        return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
+    }
+
+    public int getMinutes() {
+        return minutes;
+    }
+
+    public void setMinutes(int minutes) {
+        this.minutes = minutes;
     }
 
 
