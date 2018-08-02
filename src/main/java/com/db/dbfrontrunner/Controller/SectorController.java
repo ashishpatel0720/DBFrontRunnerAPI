@@ -18,7 +18,7 @@ import java.util.Optional;
 @RestController
 public class SectorController {
 
-    List<Optional<SecurityMaster>> data=new ArrayList<>();
+
     @Autowired
     SectorsImpl sectorsimpl;
     @Autowired
@@ -27,6 +27,7 @@ public class SectorController {
     @PostMapping("users/security")
     public List<Optional<SecurityMaster>> getSectors(@RequestBody UserId user){
 
+        List<Optional<SecurityMaster>> data=new ArrayList<>();
         List<Sectors> sector = sectorsimpl.findByEmpid(user.brokerid);
          // System.out.println(sector.get(0).getSector1());
         //System.out.println(secrep.findById(sector.get(0).getSector1()));
