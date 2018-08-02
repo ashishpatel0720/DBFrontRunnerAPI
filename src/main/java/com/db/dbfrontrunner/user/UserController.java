@@ -37,5 +37,3 @@ public class UserController {
 	}
 }
 
-
-// This is a controller for all the users
