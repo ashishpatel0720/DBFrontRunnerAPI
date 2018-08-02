@@ -41,7 +41,7 @@ public class ExecuteController {
 
 
 
-        if((UserData.getPrice() > (response + (response + 0.02))) || (UserData.getPrice() < (response - (response + 0.02)))){
+        if((UserData.getPrice() > (response * 1.02)) || (UserData.getPrice() < (response * 0.98))){
 
             flagged flag = new flagged(UserData.clientname , security , "19-Jul",null, UserData.quantity,"LIMIT", UserData.price/ UserData.quantity , UserData.direction , UserData.price, UserData.brokerid , UserData.isinno);
 
