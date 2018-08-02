@@ -1,27 +1,31 @@
 package com.db.dbfrontrunner.Tables;
 
 public class UserData {
-   public  Double amount;
-   public  String direction;
+    public  Double price;
+    public  String direction;
     public String symbol;
     public String brokerid;
     public int quantity;
     public String clientname;
     public String isinno;
+    public int hours;
+    public int minutes;
 
 
     public UserData(){
 
     }
 
-    public UserData(Double amount, String direction, String symbol, String brokerid, int quantity, String clientname, String isinno) {
-        this.amount = amount;
+    public UserData(Double price, String direction, String symbol, String brokerid, int quantity, String clientname, String isinno, int hours, int minutes) {
+        this.price = price;
         this.direction = direction;
         this.symbol = symbol;
         this.brokerid = brokerid;
         this.quantity = quantity;
         this.clientname = clientname;
         this.isinno = isinno;
+        this.hours = hours;
+        this.minutes = minutes;
     }
 
     public String getIsinno() {
@@ -32,12 +36,28 @@ public class UserData {
         this.isinno = isinno;
     }
 
-    public Double getAmount() {
-        return amount;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public int getHours() {
+        return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
+    }
+
+    public int getMinutes() {
+        return minutes;
+    }
+
+    public void setMinutes(int minutes) {
+        this.minutes = minutes;
     }
 
     public String getDirection() {
