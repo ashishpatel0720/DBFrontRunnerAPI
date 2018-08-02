@@ -27,8 +27,12 @@ this is an application for Developing API endpoints for FrontRunner Detection Ap
 //To get security from brokerid
 /users/security/              { brokerid : " "}
 
-//To get ssecurity from sectors
+//To get security from sectors
 /users/sectors/securitiy
+
+
+//To get sector limit and sector from userId
+/users/limits/
 
 
 
