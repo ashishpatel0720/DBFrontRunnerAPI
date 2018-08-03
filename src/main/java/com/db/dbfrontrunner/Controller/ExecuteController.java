@@ -4,6 +4,7 @@ package com.db.dbfrontrunner.Controller;
 import com.db.dbfrontrunner.Implementation.VerifyMarketImpl;
 import com.db.dbfrontrunner.Repository.BrokerTradingLimitsRepository;
 import com.db.dbfrontrunner.Repository.ExecuteRepository;
+import com.db.dbfrontrunner.Repository.FlaggedRepository;
 import com.db.dbfrontrunner.Repository.SymbolRepository;
 import com.db.dbfrontrunner.Tables.Orders;
 import com.db.dbfrontrunner.Tables.User;
@@ -25,6 +26,8 @@ public class ExecuteController {
     SymbolRepository symbrep;
     @Autowired
     VerifyMarketImpl verify;
+    @Autowired
+    FlaggedRepository flaggedRepository;
 
 	 @CrossOrigin //Todo:
     @PostMapping("/orders/execute")
@@ -44,7 +47,7 @@ public class ExecuteController {
         if((UserData.getPrice() > (response * 1.02)) || (UserData.getPrice() < (response * 0.98))){
 
             flagged flag = new flagged(UserData.clientname , security , "19-Jul",null, UserData.quantity,"LIMIT", UserData.price/ UserData.quantity , UserData.direction , UserData.price, UserData.brokerid , UserData.isinno);
-
+            flaggedRepository.save(flag);
             return new Response(2,"not executed","High variance in order",value);
 
         }
