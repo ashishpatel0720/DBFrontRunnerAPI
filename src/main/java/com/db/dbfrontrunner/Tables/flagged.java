@@ -1,13 +1,15 @@
 package com.db.dbfrontrunner.Tables;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class flagged {
 
 
     String clientname;
     String security;
-    String tradedate;
+    String tradedata;
     String tradetime;
     int quantity;
     String tradetype;
@@ -15,7 +17,8 @@ public class flagged {
     String direction;
     Double value;
     String  brokerid;
-    String isinnumber;
+  @Id   String isinnumber;
+
 
     public flagged(){
 
@@ -24,7 +27,7 @@ public class flagged {
     public flagged(String clientname, String security, String tradedate, String tradetime, int quantity, String tradetype, Double limitprice, String direction, Double value, String brokerid, String isinnumber) {
         this.clientname = clientname;
         this.security = security;
-        this.tradedate = tradedate;
+        this.tradedata = tradedate;
         this.tradetime = tradetime;
         this.quantity = quantity;
         this.tradetype = tradetype;
@@ -40,7 +43,7 @@ public class flagged {
         return "flagged{" +
                 "clientname='" + clientname + '\'' +
                 ", security='" + security + '\'' +
-                ", tradedate='" + tradedate + '\'' +
+                ", tradedate='" + tradedata + '\'' +
                 ", tradetime='" + tradetime + '\'' +
                 ", quantity=" + quantity +
                 ", tradetype='" + tradetype + '\'' +
@@ -51,6 +54,7 @@ public class flagged {
                 ", isinnumber='" + isinnumber + '\'' +
                 '}';
     }
+
 
     public String getClientname() {
         return clientname;
@@ -68,12 +72,12 @@ public class flagged {
         this.security = security;
     }
 
-    public String getTradedate() {
-        return tradedate;
+    public String getTradedata() {
+        return tradedata;
     }
 
-    public void setTradedate(String tradedate) {
-        this.tradedate = tradedate;
+    public void setTradedata(String tradedate) {
+        this.tradedata = tradedate;
     }
 
     public String getTradetime() {

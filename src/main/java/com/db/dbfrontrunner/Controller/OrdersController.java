@@ -1,8 +1,10 @@
 package com.db.dbfrontrunner.Controller;
 
 
+import com.db.dbfrontrunner.Repository.FlaggedRepository;
 import com.db.dbfrontrunner.Tables.Orders;
 import com.db.dbfrontrunner.Repository.OrdersRepository;
+import com.db.dbfrontrunner.Tables.flagged;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,9 @@ public class OrdersController {
     OrdersRepository ordersrepository;
 
 
+    @Autowired
+    FlaggedRepository flaggedRepository;
+
     @CrossOrigin //Todo:
     @RequestMapping(value = "/orders" , method = RequestMethod.GET)
     public List<Orders> Order_List (){
@@ -27,4 +32,15 @@ public class OrdersController {
         return Orders;
 
     }
+
+    @CrossOrigin
+    @RequestMapping(value = "/flagged", method = RequestMethod.GET)
+    public List<flagged> flagged_List(){
+        List<flagged> flaggedorders = (List<flagged>)flaggedRepository.findAll();
+        return flaggedorders;
+
+    }
+
+
+
 }
