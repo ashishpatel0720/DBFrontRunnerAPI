@@ -6,7 +6,8 @@
     <groupId>com.db</groupId>
     <artifactId>dbfrontrunner</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+<!--    <packaging>jar</packaging>-->
+    <packaging>war</packaging>
 
     <name>FrontrunnerAPI</name>
     <description>Deutsche Bank Compliance FrontRunning Detector</description>
